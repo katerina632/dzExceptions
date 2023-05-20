@@ -1,11 +1,10 @@
 import exceptions.WrongAccountException;
 import exceptions.WrongCurrencyException;
 import exceptions.WrongOperationException;
-import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         BankApplication bankApplication = new BankApplication();
 
         //1
