@@ -17,6 +17,22 @@ public class BankApplication {
         add(new Account("accountId006", 50, "USD"));
     }};
 
+    public void checkProcess(String accountId, int amount, String currency) {
+        try {
+            process(accountId, amount, currency);
+        } catch (WrongAccountException e) {
+            System.out.println("No such account exists.");
+        } catch (WrongCurrencyException e) {
+            System.out.println("Account is in another currency.");
+        } catch (WrongOperationException e) {
+            System.out.println("Account does not have enough funds.");
+        } catch (Exception e) {
+            System.out.println("A processing error occurred, please try again.");
+        } finally {
+            System.out.println("Thank you for using our service!");
+        }
+    }
+
 
     public void process(String accountId, int amount, String currency) throws Exception {
 
